@@ -1,8 +1,8 @@
 plot4 <- function() {
   ## set working directory
-  setwd("~/datasciencecoursera/exploratory data analysis/")
+  setwd("~/datasciencecoursera/exploratory data analysis/ExData_Plotting1/")
   ## read in data file
-  data <- read.csv("household_power_consumption.txt", sep = ";", na.strings = "?")
+  data <- read.csv("~/datasciencecoursera/exploratory data analysis/household_power_consumption.txt", sep = ";", na.strings = "?")
   ## subsetting data to the date of interest
   EPCdata <- data[data$Date == "1/2/2007"|data$Date == "2/2/2007",]
   ## combining columns Date and Time and convert to Date/Time classes
@@ -13,7 +13,7 @@ plot4 <- function() {
   ## set up subplot locations
   par(mfrow = c(2,2))
   ## add plot 1
-  plot(EPCdata$DateTime,EPCdata$Global_active_power,type = "l",xlab = "", ylab = "Global Active Power (kilowatts)")
+  plot(EPCdata$DateTime,EPCdata$Global_active_power,type = "l",xlab = "", ylab = "Global Active Power")
   ## add plot 2
   plot(EPCdata$DateTime,EPCdata$Voltage,type = "l",xlab = "datetime", ylab = "Voltage")
   ## add plot 3
@@ -22,7 +22,7 @@ plot4 <- function() {
   lines(EPCdata$DateTime,EPCdata$Sub_metering_3,col = "blue")
   legend("topright",legend = c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col = c("black","red","blue"), lwd = 1)
   ## add plot 4
-  plot(EPCdata$DateTime,EPCdata$Global_reactive_power,type = "l",xlab = "", ylab = "Global_reactive_power")
+  plot(EPCdata$DateTime,EPCdata$Global_reactive_power,type = "l",xlab = "datetime", ylab = "Global_reactive_power")
   ## close graphic device
   dev.off()
 }

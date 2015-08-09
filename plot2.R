@@ -1,8 +1,8 @@
 plot2 <- function() {
   ## set working directory
-  setwd("~/datasciencecoursera/exploratory data analysis/")
+  setwd("~/datasciencecoursera/exploratory data analysis/ExData_Plotting1/")
   ## read in data file
-  data <- read.csv("household_power_consumption.txt", sep = ";", na.strings = "?")
+  data <- read.csv("~/datasciencecoursera/exploratory data analysis/household_power_consumption.txt", sep = ";", na.strings = "?")
   ## subsetting data to the date of interest
   EPCdata <- data[data$Date == "1/2/2007"|data$Date == "2/2/2007",]
   ## combining columns Date and Time and convert to Date/Time classes
